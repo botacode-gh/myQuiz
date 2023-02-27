@@ -1,0 +1,23 @@
+*,
+*::before,
+*::after {
+  /* Remedies CSS regrets */
+  box-sizing: border-box;
+  /* Undoes browser auto-formats */
+  margin: 0;
+  padding: 0;
+  /* Nifty object highlighting tool: */
+  /* border: 1px solid red; */
+}
+
+body {
+  font-family: monospace;
+}
+
+nav {
+  padding: 14px 20px;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
