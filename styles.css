@@ -123,6 +123,8 @@ nav {
   text-align: center;
 }
 
+/* bookmarks */
+
 .quiz-card__bookmark {
   position: absolute;
   top: -1rem;
@@ -135,32 +137,28 @@ nav {
 
 .quiz-card__bookmark:first-child {
   stroke: rgba(245, 255, 141, 0.544);
+  fill-opacity: 85%;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .quiz-card__bookmark:first-child:hover {
   stroke: yellow;
 }
 
-svg {
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-svg.bookmark--unmarked {
-  fill: #ffffff;
-  stroke: #000000;
-}
-
 .bookmark--marked:first-child {
   fill: yellow;
+  fill-opacity: 100%;
   stroke: #000000;
 }
 
 .bookmark--marked:first-child:hover {
-  fill: rgba(255, 255, 0, 0.499);
+  fill: rgba(255, 255, 0, 0.631);
   stroke: #0000007d;
 }
+
+/* tags */
 
 .quiz-card__tags {
   display: flex;
@@ -182,10 +180,16 @@ svg.bookmark--unmarked {
   margin-bottom: 0.5rem;
 }
 
+/* quiz card question & answer */
+
 .quiz-card__question {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
+}
+
+.hidden {
+  display: none;
 }
 
 /* show answer button */
