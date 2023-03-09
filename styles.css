@@ -114,7 +114,7 @@ nav {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border: 2px solid #000;
   position: relative;
-  background-color: #fff;
+  background-color: #fffff3;
 }
 
 .quiz-card__content {
@@ -129,6 +129,16 @@ nav {
   right: 1rem;
   width: 3rem;
   height: 3rem;
+  border: none;
+  background-color: #00000000;
+}
+
+.quiz-card__bookmark:first-child {
+  stroke: rgba(245, 255, 141, 0.544);
+}
+
+.quiz-card__bookmark:first-child:hover {
+  stroke: yellow;
 }
 
 svg {
@@ -142,9 +152,14 @@ svg.bookmark--unmarked {
   stroke: #000000;
 }
 
-svg.bookmark--marked {
+.bookmark--marked:first-child {
   fill: yellow;
   stroke: #000000;
+}
+
+.bookmark--marked:first-child:hover {
+  fill: rgba(255, 255, 0, 0.499);
+  stroke: #0000007d;
 }
 
 .quiz-card__tags {

@@ -8,6 +8,7 @@
      -->
     <title>bota quiz</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="./js/index.js" defer></script>
   </head>
   <body>
     <header class="title__bar">
@@ -30,6 +31,7 @@
               class="quiz-card__bookmark"
               aria-label="bookmark"
               type="button"
+              data-js="bookmark"
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -41,7 +43,12 @@
             <h2 class="quiz-card__question">
               What property flips the axes in flexbox?
             </h2>
-            <button class="quiz-card__show-answer-button">Show Answer</button>
+            <button
+              class="quiz-card__show-answer-button"
+              data-js="show-answer-button"
+            >
+              Show Answer
+            </button>
           </div>
         </article>
         <article class="quiz-card">
