@@ -24,6 +24,26 @@ abbr {
   text-decoration: none;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 70%;
+  max-width: 700px;
+  height: max-content;
+  min-height: 200px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border: 2px solid #000;
+  background-color: #fffff3;
+}
+
+fieldset {
+  display: inherit;
+  flex-direction: inherit;
+  gap: inherit;
+  padding: 10px;
+}
+
 /* title */
 .title__bar {
   padding: 1rem 1rem;
@@ -145,6 +165,7 @@ nav {
 
 .quiz-card__bookmark:first-child:hover {
   stroke: yellow;
+  transition: 0.2s ease-in-out;
 }
 
 .bookmark--marked:first-child {
@@ -202,7 +223,7 @@ nav {
   border: 1px solid #000;
   text-decoration: none;
   text-transform: lowercase;
-  transition: background-color 0.1s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
   transition: color 0.1s ease-in-out;
   font-family: monospace;
 }

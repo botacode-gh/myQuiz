@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     -->
+    <title>Form | Quiz App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="./js/index.js" defer></script>
+  </head>
+  <body>
+    <header class="title__bar">
+      <h1 class="glow">Quiz App</h1>
+    </header>
+    <main>
+      <form data-js="form">
+        <fieldset>
+          <legend>Add quiz card:</legend>
+          <label for="inputQuestion">Your question:</label>
+          <input type="text" name="inputQuestion" id="inputQuestion" />
+          <label for="inputAnswer">Your answer:</label>
+          <textarea
+            name="inputAnswer"
+            id="details"
+            placeholder="Please make sure it's right"
+          ></textarea>
+          <label for="inputTag">Tag:</label>
+          <input type="text" name="inputTag" id="inputTag" />
+          <button type="submit" data-js="submitButton" class="button">
+            Submit
+          </button>
+        </fieldset>
+      </form>
+    </main>
+    <footer>
+      <nav>
+        <ul class="nav__menu">
+          <li><a class="nav__link" href="./index.html">Home</a></li>
+          <li><a class="nav__link" href="./bookmarks.html">Bookmarks</a></li>
+          <li><span class="nav__link">Profile</span></li>
+          <li>
+            <a class="nav__link nav__link--disabled" href="./form.html">Form</a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>

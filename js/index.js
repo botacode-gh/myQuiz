@@ -27,3 +27,6 @@ function toggleAnswer() {
 answerButton.addEventListener("click", () => {
   toggleAnswer();
 });
+
+// form
+const form = document.querySelector('[data-js="form"]');
