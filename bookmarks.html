@@ -6,41 +6,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      -->
-    <title>bota quiz</title>
+    <title>Bookmarks | Quiz App</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="./js/index.js" defer></script>
   </head>
   <body>
-    <header class="title__bar">
+    <header class="title-bar">
       <h1 class="glow">Quiz App</h1>
     </header>
     <main>
-      <section class="quiz-cards">
-        <article class="quiz-card">
-          <div class="quiz-card__tags">
-            <span class="quiz-card__tag">#Placeholder</span>
-            <span class="quiz-card__tag">#Latin</span>
+      <section class="cards">
+        <article class="card">
+          <div class="card__tags">
+            <span class="card__tag">#Placeholder</span>
+            <span class="card__tag">#Latin</span>
           </div>
-          <div class="quiz-card__content">
+          <div class="card__content">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="quiz-card__bookmark bookmark--marked"
+              class="bookmark bookmark--active"
               viewBox="0 0 24 24"
             >
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M9 4h6a2 2 0 0 1 2 2v14l-5 -3l-5 3v-14a2 2 0 0 1 2 -2" />
             </svg>
-            <h2 class="quiz-card__question">Lorem ipsum dolor sit?</h2>
-            <button class="quiz-card__show-answer-button">Show Answer</button>
+            <h2 class="card__question">Lorem ipsum dolor sit?</h2>
+            <button class="button">Show Answer</button>
           </div>
         </article>
       </section>
     </main>
     <footer>
       <nav>
-        <ul class="nav__menu">
-          <li><a class="nav__link" href="./index.html">Home</a></li>
-          <li><span class="nav__link nav__link--disabled">Bookmarks</span></li>
-          <li><a class="nav__link" href="./profile.html">Profile</a></li>
+        <ul class="nav-menu">
+          <li><a class="nav-menu__link" href="./index.html">Home</a></li>
+
+          <li>
+            <span class="nav-menu__link nav-menu__link--inactive"
+              >Bookmarks</span
+            >
+          </li>
+          <li><a class="nav-menu__link" href="./profile.html">Profile</a></li>
+          <li><a class="nav-menu__link" href="./form.html">Form</a></li>
         </ul>
       </nav>
     </footer>
