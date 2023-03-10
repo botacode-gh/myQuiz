@@ -11,24 +11,24 @@
     <script src="./js/index.js" defer></script>
   </head>
   <body>
-    <header class="title__bar">
+    <header class="title-bar">
       <h1 class="glow">Quiz App</h1>
     </header>
     <main>
-      <section class="quiz-cards">
-        <article class="quiz-card">
-          <div class="quiz-card__tags">
-            <span class="quiz-card__tag"
+      <section class="cards">
+        <article class="card" data-js="card">
+          <div class="card__tags">
+            <span class="card__tag"
               >#<abbr title="Hyper Text Markup Language">HTML</abbr></span
             >
-            <span class="quiz-card__tag"
+            <span class="card__tag"
               >#<abbr title="Cascading Style Sheet">CSS</abbr></span
             >
-            <span class="quiz-card__tag">#Flexbox</span>
+            <span class="card__tag">#Flexbox</span>
           </div>
-          <div class="quiz-card__content">
+          <div class="card__content">
             <button
-              class="quiz-card__bookmark"
+              class="bookmark"
               aria-label="bookmark"
               type="button"
               data-js="bookmark"
@@ -40,32 +40,32 @@
                 />
               </svg>
             </button>
-            <h2 class="quiz-card__question">
+            <h2 class="card__question">
               What property flips the axes in flexbox?
             </h2>
             <button class="button" data-js="show-answer-button">
               Show Answer
             </button>
-            <p class="quiz-card__answer hidden" data-js="answer">
+            <p class="card__answer hidden" data-js="answer">
               Damned if I know.
             </p>
           </div>
         </article>
-        <article class="quiz-card">
-          <div class="quiz-card__tags">
-            <span class="quiz-card__tag">#Placeholder</span>
-            <span class="quiz-card__tag">#Latin</span>
+        <article class="card">
+          <div class="card__tags">
+            <span class="card__tag">#Placeholder</span>
+            <span class="card__tag">#Latin</span>
           </div>
-          <div class="quiz-card__content">
+          <div class="card__content">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="quiz-card__bookmark bookmark--marked"
+              class="bookmark bookmark--active"
               viewBox="0 0 24 24"
             >
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M9 4h6a2 2 0 0 1 2 2v14l-5 -3l-5 3v-14a2 2 0 0 1 2 -2" />
             </svg>
-            <h2 class="quiz-card__question">Lorem ipsum dolor sit?</h2>
+            <h2 class="card__question">Lorem ipsum dolor sit?</h2>
             <button class="button">Show Answer</button>
           </div>
         </article>
@@ -73,11 +73,15 @@
     </main>
     <footer>
       <nav>
-        <ul class="nav__menu">
-          <li><span class="nav__link nav__link--disabled">Home</span></li>
-          <li><a class="nav__link" href="./bookmarks.html">Bookmarks</a></li>
-          <li><a class="nav__link" href="./profile.html">Profile</a></li>
-          <li><a class="nav__link" href="./form.html">Form</a></li>
+        <ul class="nav-menu">
+          <li>
+            <span class="nav-menu__link nav-menu__link--inactive">Home</span>
+          </li>
+          <li>
+            <a class="nav-menu__link" href="./bookmarks.html">Bookmarks</a>
+          </li>
+          <li><a class="nav-menu__link" href="./profile.html">Profile</a></li>
+          <li><a class="nav-menu__link" href="./form.html">Form</a></li>
         </ul>
       </nav>
     </footer>

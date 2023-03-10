@@ -9,48 +9,125 @@
 }
 
 /* general formatting */
+
 body {
   font-family: monospace;
   background-color: #1e0141;
 }
 
+.hidden {
+  display: none;
+}
+
+main {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+
 a {
-  /* remove underline from links */
   text-decoration: none;
 }
 
 abbr {
-  /* remove dotted underline from abbreviations */
   text-decoration: none;
 }
 
+/* form  */
+
 form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 70%;
-  max-width: 700px;
-  height: max-content;
-  min-height: 200px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  border: 2px solid #000;
-  background-color: #fffff3;
+  width: 700px;
+  margin: 3rem 0;
+  color: #fff;
 }
 
 fieldset {
-  display: inherit;
-  flex-direction: inherit;
-  gap: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   padding: 10px;
+  border: none;
 }
 
-/* title */
-.title__bar {
+legend {
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+label {
+  margin-left: 100px;
+  font-size: 1.2rem;
+}
+
+input[type="text"],
+textarea {
+  background-color: #000;
+  border: none;
+  width: 70%;
+  align-self: center;
+  text-align: center;
+  justify-self: center;
+  color: white;
+  font-family: monospace;
+}
+
+input[type="text"] {
+  height: 3rem;
+}
+
+textarea {
+  height: 6rem;
+}
+
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 20px rgba(255, 249, 61, 0.746);
+  color: yellow;
+}
+
+form button {
+  align-self: center;
+}
+
+/* button */
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #000;
+  color: #f1f1d1;
+  border: 1px solid #000;
+  font-family: monospace;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: lowercase;
+  transition: background-color 0.2s ease-in-out;
+  transition: color 0.1s ease-in-out;
+  width: 130px;
+}
+
+.button:focus {
+  box-shadow: 0 0 20px rgba(255, 249, 61, 0.746);
+  color: yellow;
+}
+
+.button:hover {
+  background-color: yellow;
+  color: black;
+  border: 1px solid #000;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in;
+}
+
+/* title bar */
+.title-bar {
   padding: 1rem 1rem;
   display: flex;
   justify-content: center;
   background-color: #000;
-  color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -74,7 +151,7 @@ nav {
   justify-content: center;
 }
 
-.nav__menu {
+.nav-menu {
   margin: 0;
   padding: 0;
   display: flex;
@@ -82,7 +159,7 @@ nav {
   list-style: none;
 }
 
-.nav__link {
+.nav-menu__link {
   padding: 10px;
   display: block;
   text-transform: lowercase;
@@ -90,30 +167,30 @@ nav {
   color: #fff;
 }
 
-.nav__link:hover {
+.nav-menu__link:hover {
   color: #000;
-  background-color: #fff;
+  background-color: yellow;
   animation: wiredB2 1s ease-out infinite;
 }
 
-.nav__link:focus {
+.nav-menu__link:focus {
   background-color: yellow;
   color: black;
   font-weight: bold;
 }
 
-.nav__link--disabled {
+.nav-menu__link--inactive {
   color: yellow;
   cursor: default;
 }
 
-.nav__link--disabled:hover {
+.nav-menu__link--inactive:hover {
   background-color: #fff;
   text-decoration: none;
 }
 
 /* quiz cards */
-.quiz-cards {
+.cards {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -123,21 +200,24 @@ nav {
   flex-direction: column;
 }
 
-.quiz-card {
+.card {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 70%;
-  max-width: 700px;
-  height: max-content;
-  min-height: 200px;
+  width: 700px;
+  height: 350px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  border: 2px solid #000;
   position: relative;
-  background-color: #fffff3;
+  background-color: #f1f1d1;
+  border: 3px solid #f1f1d1;
 }
 
-.quiz-card__content {
+.card--active {
+  border: 3px solid yellow;
+  transition: border 0.5s ease-in;
+}
+
+.card__content {
   padding: 20px;
   height: 50%;
   text-align: center;
@@ -145,7 +225,7 @@ nav {
 
 /* bookmarks */
 
-.quiz-card__bookmark {
+.bookmark {
   position: absolute;
   top: -1rem;
   right: 1rem;
@@ -155,43 +235,40 @@ nav {
   background-color: #00000000;
 }
 
-.quiz-card__bookmark:first-child {
-  stroke: rgba(245, 255, 141, 0.544);
-  fill-opacity: 85%;
+.bookmark:first-child {
+  stroke: rgb(0, 0, 0);
+  fill: #f1f1d1;
   stroke-width: 1.5;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
-.quiz-card__bookmark:first-child:hover {
-  stroke: yellow;
-  transition: 0.2s ease-in-out;
+.bookmark:first-child:hover {
+  fill: yellow;
+  transition: fill 0.2s ease-in-out;
 }
 
-.bookmark--marked:first-child {
+.bookmark--active:first-child {
   fill: yellow;
-  fill-opacity: 100%;
   stroke: #000000;
 }
 
-.bookmark--marked:first-child:hover {
+.bookmark--active:first-child:hover {
   fill: rgba(255, 255, 0, 0.631);
   stroke: #0000007d;
 }
 
 /* tags */
 
-.quiz-card__tags {
+.card__tags {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  margin-top: 1rem;
   position: absolute;
   bottom: 0;
   left: 0.5rem;
 }
 
-.quiz-card__tag {
+.card__tag {
   background-color: #fff092;
   color: #808080;
   font-size: 1rem;
@@ -203,38 +280,24 @@ nav {
 
 /* quiz card question & answer */
 
-.quiz-card__question {
+.card__question {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
 }
 
-.hidden {
-  display: none;
+.card__answer {
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-style: italic;
+  animation: fadeAnswer 2s ease-in;
 }
 
-/* show answer button */
-
-.quiz-card__show-answer-button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #000;
-  color: #fff;
-  border: 1px solid #000;
-  text-decoration: none;
-  text-transform: lowercase;
-  transition: background-color 0.2s ease-in-out;
-  transition: color 0.1s ease-in-out;
-  font-family: monospace;
-}
-
-.quiz-card__show-answer-button:focus {
-  box-shadow: 0 0 20px rgba(255, 249, 61, 0.746);
-  color: yellow;
-}
-.quiz-card__show-answer-button:hover {
-  background-color: yellow;
-  color: black;
-  border: 1px solid #000;
-  font-weight: bold;
+@keyframes fadeAnswer {
+  0% {
+    color: #f1f1d1;
+  }
+  100% {
+    color: #000;
+  }
 }
