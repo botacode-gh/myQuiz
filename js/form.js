@@ -92,6 +92,7 @@ function createCard(data) {
   content.classList.add("card__content");
   card.append(content);
 
+  /* makes SVG icon invisible
   const bookmarkButton = document.createElement("button");
   bookmarkButton.classList.add("bookmark");
   bookmarkButton.setAttribute("aria-label", "bookmark");
@@ -116,6 +117,23 @@ function createCard(data) {
     "M9 4h6a2 2 0 0 1 2 2v14l-5 -3l-5 3v-14a2 2 0 0 1 2 -2"
   );
   bookmarkSVG.append(SVGPath2);
+  */
+
+  content.innerHTML += `
+    <button
+      class="bookmark"
+      aria-label="bookmark"
+      type="button"
+      data-js="bookmark"
+    >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path
+        d="M9 4h6a2 2 0 0 1 2 2v14l-5 -3l-5 3v-14a2 2 0 0 1 2 -2"
+      />
+    </svg>
+    </button>
+  `;
 
   const question = document.createElement("h2");
   question.classList.add("card__question");
