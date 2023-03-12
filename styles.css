@@ -326,13 +326,19 @@ nav {
 
 .card__tag {
   background-color: #fff092;
-  color: #808080;
+  color: #80808090;
   font-size: 1rem;
   text-transform: lowercase;
   padding: 0.5rem;
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
-  border: 2px dashed #80808090;
+  border: 2px dashed #80808070;
+}
+
+.card__tag:hover {
+  color: #808080;
+  border-color: #808080;
+  transition: all 0.3s ease-in;
 }
 
 /* quiz card question & answer */
