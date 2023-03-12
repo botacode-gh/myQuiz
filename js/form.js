@@ -19,45 +19,59 @@ function changeButtonColorOnClick(backgroundColor, textColor) {
 }
 changeButtonColorOnClick("#1e0141", "white");
 
-// form
+/* form */
 const form = document.querySelector('[data-js="form"]');
 
-/*
-          <div class="card__tags">
-            <span class="card__tag"
-              >#<abbr title="Hyper Text Markup Language">HTML</abbr></span
-            >
-            <span class="card__tag"
-              >#<abbr title="Cascading Style Sheet">CSS</abbr></span
-            >
-            <span class="card__tag">#Flexbox</span>
-          </div>
-          <div class="card__content">
-            <button
-              class="bookmark"
-              aria-label="bookmark"
-              type="button"
-              data-js="bookmark"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path
-                  d="M9 4h6a2 2 0 0 1 2 2v14l-5 -3l-5 3v-14a2 2 0 0 1 2 -2"
-                />
-              </svg>
-            </button>
-            <h2 class="card__question">
-              What property flips the axes in flexbox?
-            </h2>
-            <button class="button" data-js="show-answer-button">
-              Show Answer
-            </button>
-            <p class="card__answer hidden" data-js="answer">
-              Damned if I know.
-            </p>
-          </div>
-*/
+// live input: tag, lowercase
+const inputTag = document.querySelector('[data-js="input-tag"');
 
+inputTag.addEventListener("input", () => {
+  const inputValue = inputTag.value;
+  inputTag.value = inputValue.toLowerCase();
+});
+
+// live input: display max length
+const inputQuestion = document.querySelector('[data-js="input-question"');
+const inputAnswer = document.querySelector('[data-js="input-answer"');
+
+const charsLeftQuestion = document.querySelector(
+  '[data-js="chars-left-question"]'
+);
+const charsLeftAnswer = document.querySelector('[data-js="chars-left-answer"]');
+const charsLeftTag = document.querySelector('[data-js="chars-left-tag"]');
+
+function calculateCharsLeft(event, charsLeftDisplay, maxLength) {
+  charsLeftDisplay.classList.add("chars-left--fade-in");
+  const inputLength = event.target.value.length;
+  let charsLeft = maxLength - inputLength;
+  charsLeftDisplay.textContent = `${charsLeft} characters left`;
+
+  charsLeft === 0
+    ? charsLeftDisplay.classList.add("chars-left--no-chars-left")
+    : null;
+
+  charsLeft > 0
+    ? (charsLeftDisplay.classList.remove("chars-left--no-chars-left"),
+      charsLeftDisplay.classList.remove("chars-left--fade-out"),
+      charsLeftDisplay.classList.add("chars-left--fade-in"))
+    : null;
+
+  charsLeft === maxLength
+    ? charsLeftDisplay.classList.add("chars-left--fade-out")
+    : null;
+}
+
+inputQuestion.addEventListener("input", (event) => {
+  calculateCharsLeft(event, charsLeftQuestion, 100);
+});
+inputAnswer.addEventListener("input", (event) => {
+  calculateCharsLeft(event, charsLeftAnswer, 500);
+});
+inputTag.addEventListener("input", (event) => {
+  calculateCharsLeft(event, charsLeftTag, 50);
+});
+
+// create new card
 function createCard(data) {
   const main = document.querySelector("main");
   const card = document.createElement("article");

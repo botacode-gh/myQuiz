@@ -19,15 +19,32 @@
         <fieldset>
           <legend>Add quiz card</legend>
           <label for="question">Your question:</label>
-          <input type="text" name="question" id="question" />
+          <input
+            type="text"
+            name="question"
+            id="question"
+            maxlength="100"
+            data-js="input-question"
+          />
+          <p class="chars-left" data-js="chars-left-question"></p>
           <label for="answer">Your answer:</label>
           <textarea
             name="answer"
             id="details"
             placeholder="Please make sure it's right"
+            maxlength="500"
+            data-js="input-answer"
           ></textarea>
+          <p class="chars-left" data-js="chars-left-answer"></p>
           <label for="tag">Tag:</label>
-          <input type="text" name="tag" id="tag" />
+          <input
+            type="text"
+            name="tag"
+            id="tag"
+            data-js="input-tag"
+            maxlength="50"
+          />
+          <p class="chars-left" data-js="chars-left-tag"></p>
           <button type="submit" data-js="submitButton" class="button">
             Submit
           </button>
