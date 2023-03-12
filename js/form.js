@@ -22,23 +22,20 @@ changeButtonColorOnClick("#1e0141", "white");
 /* form */
 const form = document.querySelector('[data-js="form"]');
 
-// live input: tag, lowercase
-const inputTag = document.querySelector('[data-js="input-tag"');
-
-inputTag.addEventListener("input", () => {
-  const inputValue = inputTag.value;
-  inputTag.value = inputValue.toLowerCase();
-});
-
 // live input: display max length
 const inputQuestion = document.querySelector('[data-js="input-question"');
 const inputAnswer = document.querySelector('[data-js="input-answer"');
+const inputTag = document.querySelector('[data-js="input-tag"');
 
 const charsLeftQuestion = document.querySelector(
   '[data-js="chars-left-question"]'
 );
 const charsLeftAnswer = document.querySelector('[data-js="chars-left-answer"]');
 const charsLeftTag = document.querySelector('[data-js="chars-left-tag"]');
+
+const maxLengthQuestion = inputQuestion.getAttribute("maxlength");
+const maxLengthAnswer = inputQuestion.getAttribute("maxlength");
+const maxLengthTag = inputQuestion.getAttribute("maxlength");
 
 function calculateCharsLeft(event, charsLeftDisplay, maxLength) {
   charsLeftDisplay.classList.add("chars-left--fade-in");
@@ -62,21 +59,19 @@ function calculateCharsLeft(event, charsLeftDisplay, maxLength) {
 }
 
 inputQuestion.addEventListener("input", (event) => {
-  calculateCharsLeft(
-    event,
-    charsLeftQuestion,
-    inputQuestion.getAttribute("maxlength")
-  );
+  calculateCharsLeft(event, charsLeftQuestion, +maxLengthQuestion);
 });
 inputAnswer.addEventListener("input", (event) => {
-  calculateCharsLeft(
-    event,
-    charsLeftAnswer,
-    inputAnswer.getAttribute("maxlength")
-  );
+  calculateCharsLeft(event, charsLeftAnswer, +maxLengthAnswer);
 });
 inputTag.addEventListener("input", (event) => {
-  calculateCharsLeft(event, charsLeftTag, inputTag.getAttribute("maxlength"));
+  calculateCharsLeft(event, charsLeftTag, +maxLengthTag);
+});
+
+// live input: tag, lowercase
+inputTag.addEventListener("input", () => {
+  const inputValue = inputTag.value;
+  inputTag.value = inputValue.toLowerCase();
 });
 
 // create new card
