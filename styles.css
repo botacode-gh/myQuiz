@@ -92,6 +92,47 @@ form button {
   align-self: center;
 }
 
+.chars-left {
+  align-self: flex-end;
+  text-align: right;
+  margin-right: 105px;
+  font-style: italic;
+  color: #1e0141;
+}
+
+.chars-left--fade-in {
+  animation: fadeInCharsLeft 2s ease-in-out;
+  color: #ffffffb9;
+}
+
+@keyframes fadeInCharsLeft {
+  0% {
+    color: #1e0141;
+  }
+  100% {
+    color: #ffffffb9;
+  }
+}
+
+.chars-left--fade-out {
+  animation: fadeOutCharsLeft 2s ease-in-out;
+  color: #1e0141;
+}
+
+@keyframes fadeOutCharsLeft {
+  0% {
+    color: #ffffffb9;
+  }
+  100% {
+    color: #1e0141;
+  }
+}
+
+.chars-left--no-chars-left {
+  color: yellow;
+  font-weight: bold;
+}
+
 /* button */
 
 .button {
