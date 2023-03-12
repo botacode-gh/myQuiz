@@ -24,6 +24,7 @@ main {
   width: 100%;
   align-items: center;
   flex-direction: column;
+  gap: 3rem;
 }
 
 a {
@@ -250,8 +251,7 @@ nav {
   flex-wrap: wrap;
   align-items: center;
   gap: 5rem;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin: 3rem 0;
   flex-direction: column;
 }
 

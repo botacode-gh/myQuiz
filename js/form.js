@@ -62,22 +62,30 @@ function calculateCharsLeft(event, charsLeftDisplay, maxLength) {
 }
 
 inputQuestion.addEventListener("input", (event) => {
-  calculateCharsLeft(event, charsLeftQuestion, 100);
+  calculateCharsLeft(
+    event,
+    charsLeftQuestion,
+    inputQuestion.getAttribute("maxlength")
+  );
 });
 inputAnswer.addEventListener("input", (event) => {
-  calculateCharsLeft(event, charsLeftAnswer, 500);
+  calculateCharsLeft(
+    event,
+    charsLeftAnswer,
+    inputAnswer.getAttribute("maxlength")
+  );
 });
 inputTag.addEventListener("input", (event) => {
-  calculateCharsLeft(event, charsLeftTag, 50);
+  calculateCharsLeft(event, charsLeftTag, inputTag.getAttribute("maxlength"));
 });
 
 // create new card
 function createCard(data) {
-  const main = document.querySelector("main");
+  const cards = document.querySelector('[data-js="cards"]');
   const card = document.createElement("article");
   card.classList.add("card");
   card.setAttribute("data-js", "card");
-  main.append(card);
+  cards.append(card);
 
   const tags = document.createElement("div");
   tags.classList.add("card__tags");
