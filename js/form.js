@@ -34,8 +34,8 @@ const charsLeftAnswer = document.querySelector('[data-js="chars-left-answer"]');
 const charsLeftTag = document.querySelector('[data-js="chars-left-tag"]');
 
 const maxLengthQuestion = inputQuestion.getAttribute("maxlength");
-const maxLengthAnswer = inputQuestion.getAttribute("maxlength");
-const maxLengthTag = inputQuestion.getAttribute("maxlength");
+const maxLengthAnswer = inputAnswer.getAttribute("maxlength");
+const maxLengthTag = inputTag.getAttribute("maxlength");
 
 function calculateCharsLeft(event, charsLeftDisplay, maxLength) {
   charsLeftDisplay.classList.add("chars-left--fade-in");

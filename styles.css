@@ -10,9 +10,15 @@
 
 /* general formatting */
 
+:root {
+  --primary-color: #f1f1d1;
+  --secondary-color: #1e0141;
+  --accent-color: #ff0;
+}
+
 body {
   font-family: monospace;
-  background-color: #1e0141;
+  background-color: var(--secondary-color);
 }
 
 .hidden {
@@ -27,10 +33,7 @@ main {
   gap: 3rem;
 }
 
-a {
-  text-decoration: none;
-}
-
+a,
 abbr {
   text-decoration: none;
 }
@@ -65,14 +68,14 @@ label {
 
 input[type="text"],
 textarea {
-  background-color: #000;
-  border: none;
-  width: 100%;
   align-self: center;
-  text-align: center;
   justify-self: center;
-  color: white;
+  width: 100%;
+  border: none;
+  background-color: #000;
+  color: #fff;
   font-family: monospace;
+  text-align: center;
 }
 
 input[type="text"] {
@@ -100,7 +103,7 @@ textarea {
 input:focus,
 textarea:focus {
   box-shadow: 0 0 20px rgba(255, 249, 61, 0.746);
-  color: yellow;
+  color: var(--accent-color);
 }
 
 form button {
@@ -112,7 +115,7 @@ form button {
   align-self: flex-end;
   text-align: right;
   font-style: italic;
-  color: #1e0141;
+  color: var(--secondary-color);
 }
 
 .chars-left--fade-in {
@@ -122,7 +125,7 @@ form button {
 
 @keyframes fadeInCharsLeft {
   0% {
-    color: #1e0141;
+    color: var(--secondary-color);
   }
   100% {
     color: #ffffffb9;
@@ -131,7 +134,7 @@ form button {
 
 .chars-left--fade-out {
   animation: fadeOutCharsLeft 2s ease-in-out;
-  color: #1e0141;
+  color: var(--secondary-color);
 }
 
 @keyframes fadeOutCharsLeft {
@@ -139,12 +142,12 @@ form button {
     color: #ffffffb9;
   }
   100% {
-    color: #1e0141;
+    color: var(--secondary-color);
   }
 }
 
 .chars-left--no-chars-left {
-  color: yellow;
+  color: var(--accent-color);
   font-weight: bold;
 }
 
@@ -154,24 +157,22 @@ form button {
   display: inline-block;
   padding: 10px 20px;
   background-color: #000;
-  color: #f1f1d1;
+  color: var(--primary-color);
   border: 1px solid #000;
   font-family: monospace;
   font-weight: bold;
   text-decoration: none;
   text-transform: lowercase;
-  transition: background-color 0.2s ease-in-out;
-  transition: color 0.1s ease-in-out;
-  width: 130px;
+  transition: background-color 0.2s ease-in-out, color 0.1s ease-in-out;
 }
 
 .button:focus {
   box-shadow: 0 0 20px rgba(255, 249, 61, 0.746);
-  color: yellow;
+  color: var(--accent-color);
 }
 
 .button:hover {
-  background-color: yellow;
+  background-color: var(--accent-color);
   color: black;
   border: 1px solid #000;
   font-weight: bold;
@@ -225,18 +226,18 @@ nav {
 
 .nav-menu__link:hover {
   color: #000;
-  background-color: yellow;
+  background-color: var(--accent-color);
   animation: wiredB2 1s ease-out infinite;
 }
 
 .nav-menu__link:focus {
-  background-color: yellow;
+  background-color: var(--accent-color);
   color: black;
   font-weight: bold;
 }
 
 .nav-menu__link--inactive {
-  color: yellow;
+  color: var(--accent-color);
   cursor: default;
 }
 
@@ -263,12 +264,12 @@ nav {
   height: 350px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   position: relative;
-  background-color: #f1f1d1;
-  border: 3px solid #f1f1d1;
+  background-color: var(--primary-color);
+  border: 3px solid var(--primary-color);
 }
 
 .card--active {
-  border: 3px solid yellow;
+  border: 3px solid var(--accent-color);
   box-shadow: 0 0 20px rgba(255, 249, 61, 0.746);
   transition: border 0.5s ease-in, box-shadow 1s ease-in;
 }
@@ -293,19 +294,19 @@ nav {
 
 .bookmark:first-child {
   stroke: rgb(0, 0, 0);
-  fill: #f1f1d1;
+  fill: var(--primary-color);
   stroke-width: 1.5;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
 .bookmark:first-child:hover {
-  fill: yellow;
+  fill: var(--accent-color);
   transition: fill 0.2s ease-in-out;
 }
 
 .bookmark--active:first-child {
-  fill: yellow;
+  fill: var(--accent-color);
   stroke: #000000;
 }
 
@@ -358,7 +359,7 @@ nav {
 
 @keyframes fadeAnswer {
   0% {
-    color: #f1f1d1;
+    color: var(--primary-color);
   }
   100% {
     color: #000;
