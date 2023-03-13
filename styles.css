@@ -120,7 +120,7 @@ form button {
 }
 
 .chars-left--fade-in {
-  animation: fadeInCharsLeft 2s ease-in-out;
+  animation: fadeInCharsLeft 0.5s ease-in-out;
   color: #ffffffb9;
 }
 
