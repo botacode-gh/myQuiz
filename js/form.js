@@ -1,28 +1,24 @@
-console.log("Form initialized 😎");
+/// IMPORTS ///
+// global functions
+import {
+  initializeBookmark,
+  changeButtonColorOnClick,
+  changeNavLinkColorOnClick,
+} from "./global.js";
+// global variables
+import { primaryColor, secondaryColor, accentColor } from "./global.js";
 
-/// buttons ///
-const buttons = document.querySelectorAll(".button");
+/// INITIALIZATION ///
+console.log("form.js initialized 📝");
+changeButtonColorOnClick(secondaryColor, primaryColor);
+changeNavLinkColorOnClick(secondaryColor, primaryColor);
 
-// change button color on click
-
-function changeButtonColorOnClick(backgroundColor, textColor) {
-  buttons.forEach((button) => {
-    button.addEventListener("mousedown", () => {
-      button.style.backgroundColor = backgroundColor;
-      button.style.color = textColor;
-    });
-    button.addEventListener("mouseup", () => {
-      button.style.backgroundColor = "";
-      button.style.color = "";
-    });
-  });
-}
-changeButtonColorOnClick("#1e0141", "white");
-
-/* form */
+// form //
 const form = document.querySelector('[data-js="form"]');
 
-// live input: display max length
+/// live input
+
+// display max length
 const inputQuestion = document.querySelector('[data-js="input-question"');
 const inputAnswer = document.querySelector('[data-js="input-answer"');
 const inputTag = document.querySelector('[data-js="input-tag"');
@@ -68,13 +64,13 @@ inputTag.addEventListener("input", (event) => {
   calculateCharsLeft(event, charsLeftTag, +maxLengthTag);
 });
 
-// live input: tag, lowercase
+// tag, lowercase
 inputTag.addEventListener("input", () => {
   const inputValue = inputTag.value;
   inputTag.value = inputValue.toLowerCase();
 });
 
-// create new card
+/// create new card
 function createCard(data) {
   const cards = document.querySelector('[data-js="cards"]');
   const card = document.createElement("article");
@@ -162,7 +158,12 @@ form.addEventListener("submit", (event) => {
   const formData = new FormData(form);
   const data = Object.fromEntries(formData);
 
-  console.log(data);
+  // why does template literal not work here?
+  // console.log(`User submitted: ${data}`);
+  // output: User submitted: [object Object]#
+
+  // this works
+  console.log("User submitted: ", data);
 
   createCard(data);
 });
