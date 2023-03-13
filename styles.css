@@ -14,6 +14,7 @@
   --primary-color: #f1f1d1;
   --secondary-color: #1e0141;
   --accent-color: #ff0;
+  --content-width: 50vw;
 }
 
 body {
@@ -41,7 +42,7 @@ abbr {
 /* form  */
 
 form {
-  width: 700px;
+  width: var(--content-width);
   margin-top: 3rem;
   color: #fff;
 }
@@ -249,18 +250,17 @@ nav {
 /* quiz cards */
 .cards {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: column wrap;
   align-items: center;
   gap: 5rem;
   margin: 3rem 0;
-  flex-direction: column;
 }
 
 .card {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 700px;
+  width: var(--content-width);
   height: 350px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   position: relative;
@@ -319,10 +319,11 @@ nav {
 
 .card__tags {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   position: absolute;
   bottom: 0;
   left: 0.5rem;
+  gap: 0.5rem;
 }
 
 .card__tag {
@@ -331,7 +332,6 @@ nav {
   font-size: 1rem;
   text-transform: lowercase;
   padding: 0.5rem;
-  margin-right: 0.5rem;
   margin-bottom: 0.5rem;
   border: 2px dashed #80808070;
 }
