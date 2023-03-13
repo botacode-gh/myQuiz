@@ -159,8 +159,8 @@ form.addEventListener("submit", (event) => {
   const data = Object.fromEntries(formData);
 
   // why does template literal not work here?
-  // console.log(`User submitted: ${data}`);
-  // output: User submitted: [object Object]#
+  console.log(`User submitted: ${data}`);
+  // output: User submitted: [object Object]
 
   // this works
   console.log("User submitted: ", data);
